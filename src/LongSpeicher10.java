@@ -34,16 +34,14 @@ class LongSpeicher10 implements LongSpeicher {
    // ---------------------------------------------------------------------
    public boolean fuegeEin(long n) {
 	   
-	   if(nfi < speicher.length){
-		   speicher[nfi] = n;
-		   nfi++;
-		   return true;
-	   }
+	  // Fuegt n in diesen Speicher ein und liefert true.
+	  // Liefert false, wenn n nicht eingefuegt werden konnte.
 	   
-      // Fuegt n in diesen Speicher ein und liefert true.
-      // Liefert false, wenn n nicht eingefuegt werden konnte.
-
-      return false;
+	   if(nfi >= speicher.length) return false;
+	   
+	   speicher[nfi] = n;
+	   nfi++;
+	   return true;
    }
    // ---------------------------------------------------------------------
    public boolean loesche(long n) {
@@ -63,9 +61,13 @@ class LongSpeicher10 implements LongSpeicher {
    }
    // ---------------------------------------------------------------------
    public boolean istDrin(long n) {
-      // Liefert true genau dann wenn n in diesem Speicher vorkommt.
+	   for(int i = 0; i < speicher.length; i++){
+		   if(speicher[i] == n){
+		   		return true;
+		   }
+	   }
 
-      return false; // MUSS ERSETZT WERDEN
+      return false;
    }
    // ---------------------------------------------------------------------
    // Zum Testen:

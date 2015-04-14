@@ -1,0 +1,277 @@
+﻿Anfangs-Quiz MB2-ALG (Algorithmen), Zug 1, im SS15.
+==========================================================================
+Schreiben Sie Ihre Anworten (mit einem Editor) jeweils unter die
+betreffende Frage (so dass man von jeder Antwort leicht erkennen kann,
+zu welcher Frage sie gehört).
+==========================================================================
+
+--------------------------------------------------------------------------
+1. Woraus besteht ein Java-Programm? Nennen Sie nicht die kleinsten
+Bestandteile (wie Zeichen oder Zeilen oder Methoden etc.), sondern die
+größten sinnvollen Bestandteile eines Java-Programms.
+
+Klassen und Interfaces
+
+--------------------------------------------------------------------------
+2. In Java unterscheidet man 2 Arten von Typen:
+Primitive Typen und Referenztypen.
+Wie viele primitive Typen gibt es und wie heißen sie?
+
+8 Primitive: byte, char, boolean, int, double, float, short, long
+
+--------------------------------------------------------------------------
+3. Zu jedem primitiven Typ gibt es eine Hüllklasse (engl. wrapper class).
+Wie heißen diese Hüllklassen?
+
+int -> Integer (Hüllklasse)
+char -> Character
+Rest wie der Name nur großgeschrieben
+
+--------------------------------------------------------------------------
+4. Wie viele Referenztypen gibt es in Java?
+Hier genügt eine sehr ungefähre Antwort.
+
+unbegrenzt viele (unendlich)
+
+--------------------------------------------------------------------------
+5. Vereinbaren Sie eine Variable namens summe vom Typ int mit dem
+Anfangswert 123.
+
+int summe = 123;
+
+summe = 123, 124, 62
+
+--------------------------------------------------------------------------
+6. Vereinbaren Sie eine unveränderbare Variable namens MAX vom Typ int und
+initialisieren Sie sie mit dem größten int-Wert.
+
+final (kann nur einmal beschrieben werden) static (benötigen keinerlei Instanzen einer Klasse, um aufgerufen zu werden) int MAX = 231-1
+
+--------------------------------------------------------------------------
+7. Vereinbaren Sie eine Variable namens zahl vom Typ Integer, die auf ein
+Objekt zeigt, welches die Zahl 321 repräsentiert.
+
+
+int zahl = new Integer(321);
+
+--------------------------------------------------------------------------
+8. Vereinbaren Sie eine Variable namens meldung vom Typ String, die auf ein
+Objekt zeigt, welches die Meldung "Error 17" repräsentiert. Geben Sie
+möglichst zwei ein bisschen unterschiedliche Lösungen an.
+
+String  meldung = “Error 17”;
+String meldung = new String(“Error 17”);
+
+--------------------------------------------------------------------------
+9. Vereinbaren Sie zwei Variablen namens meldung1 und meldung2, die beide
+zum Typ String gehören und auf dasselbe Objekt zeigen.
+Das Objekt soll den Text "Alles OK" repräsentieren.
+
+String meldung1 = "Alles Ok";
+String meldung2 = meldung1;
+
+
+--------------------------------------------------------------------------
+10. Wie viele Zeichen enthält ein kürzestes String-Objekt?
+
+0 Zeichen
+
+--------------------------------------------------------------------------
+11. Betrachten Sie die folgenden beiden Variablenvereinbarungen:
+
+ 1    final String        text01 = new String       ("Hallo!");
+ 2    final StrinbBuilder text02 = new StringBuilder("Hallo!");
+
+Was ist der wichtigste Unterschied zwischen den Objekten text01 und text02?
+Wann würden Sie eher text01 verwenden? Und wann text02?
+
+Zeichenketten, die in der virtuellen Maschine in String-Objekten gespeichert sind, haben die Eigenschaft, dass ihr Inhalt nicht mehr verändert werden kann.
+
+Wenn der Text geändert werden kann und nur von einem einzigen Thread aufgerufen wird, sollte man den Stringbuilder verwenden, weil Stringbuilder nicht synchronisiert ist.
+
+
+==========================================================================
+ACHTUNG: Im Folgenden werden  Bruchzahlen mit einem Dezimalpunkt notiert,
+z.B. 1.5 (wie in Java), nicht mit einem Dezimalkomma, z.B. 1,5 (wie in der
+Schweiz, in Österreich und in Deutschland).
+==========================================================================
+
+--------------------------------------------------------------------------
+12. Wie groß ist der größte int-Wert ungefähr? Ihre Antwort sollte auf 3
+Ziffern genau sein, etwa so wie die folgenden Zahlen: 5.63 Millionen, 35.0
+Milliarden, 0.277 Trillionen etc.
+
+unendlich Groß
+bei Java wie oben angegeben
+
+--------------------------------------------------------------------------
+13. Wie viele int-Werte gibt es ungefähr? Ihre Antwort sollte auf 2 Ziffern
+genau sein, etwa so wie die folgenden Zahlen: 5.6 Millionen, 35 Milliarden,
+0.27 Trillionen etc.
+
+unendllich viele
+bei java was die Rechnerumgebung hergibt
+
+--------------------------------------------------------------------------
+14. Welchen Wert hat der Ausdruck -Integer.MIN_VALUE ? Die Antwort ist
+leichter anzugeben als man möglicherweise im ersten Moment denkt. Ein
+Taschenrechner ist definitiv NICHT hilfreich.
+
+-2147483648
+oder Integer.Max_value + 1
+
+--------------------------------------------------------------------------
+15. Wie viele float-Werte gibt es ungefähr? Ihre Antwort sollte auf 2
+Ziffern genau sein (siehe oben).
+
+Unendlich viele
+
+--------------------------------------------------------------------------
+16. Gibt es für jeden float-Wert einen genau gleichgroßen int-Wert?
+
+Nein, es gibt mehr reelle Zahlen als Int
+
+--------------------------------------------------------------------------
+17. Gibt es für jeden int-Wert einen genau gleichgroßen float-Wert?
+
+Ja, da es mehr reelle Zahlen gibt (linkstotal) 
+
+--------------------------------------------------------------------------
+18. Wie viele Zahlen gibt die folgende for-Schleife aus:
+
+ 3    for (int i=0; i<=7; i++) System.out.print(i + " ");
+
+8 Zahlen
+
+--------------------------------------------------------------------------
+19. Geben Sie eine for-Schleife an, die die Zahlen 17 bis 63
+(einschließlich) untereinander ausgibt, d.h. jede Zahl auf einer neuen
+Zeile.
+
+for (int i=17; i<=63; i++) System.out.println(i);
+
+--------------------------------------------------------------------------
+20. Welcher der folgenden beiden Befehle ist erlaubt und
+welcher ist nicht erlaubt?
+
+ 4    int[] r01 = {10, 20, 30};
+ 5    r01 = {40, 50, 60};
+
+4. ist erlaubt!
+
+--------------------------------------------------------------------------
+21. Vereinbaren Sie eine Variable namens r02 vom Typ int[], die auf eine
+Reihung (engl. an array) der Länge 500 zeigt. Auf diese Reihung r02 beziehen
+sich auch die folgenden 3 Aufgaben.
+
+int[] r02 = new int[500]; 
+
+--------------------------------------------------------------------------
+22. Geben Sie den kleinsten und den größten Index der Reihung r02 an.
+
+r02[0] und r02[499]
+
+--------------------------------------------------------------------------
+23. Geben Sie eine Schleife an, die in jede Komponente der Reihung r02 eine
+der Zahlen 1, 2, 3, ... schreibt. Welche Zahl wird in die letzte Komponente
+von r02 geschrieben?
+
+for(int i = 0; i < r02.length; i++) r02[i] = i+1;
+
+r02[499] == 500;
+
+--------------------------------------------------------------------------
+24. Geben Sie den Wert der letzten Komponente der Reihung r02 zum Bildschirm
+aus (z.B. mit dem Befehl System.out.println).
+
+System.out.println(r02[499]);
+
+500
+
+--------------------------------------------------------------------------
+25. Betrachten Sie die folgenden Befehle:
+
+ 6       int[]   r03 = {100, 200, 300};
+ 7       int[]   r04 = {100, 200, 300};
+ 8       int[]   r05 = r04;
+ 9
+10       boolean b01 = r03 == r04;
+11       boolean b02 = r03.equals(r04);
+12       boolean b03 = r04 == r05;
+13       boolean b04 = r04.equals(r05);
+
+Geben Sie die Werte an, mit denen die Variablen b01 bis b04 initialisiert
+werden.
+
+boolean b01 = r03 == r04; // false, ist ein anderes Objekt
+boolean b02 = r03.equals(r04); //false, ist ein anderes Objekt
+boolean b03 = r04 == r05; // true, ist das gleiche Objekt
+boolean b04 = r04.equals(r05); //ture, ist das gleiche Objekt
+
+
+
+--------------------------------------------------------------------------
+26. Betrachten Sie die folgenden Befehle:
+
+14       String  s01 = new String("Hallo!");
+15       String  s02 = new String("Hallo!");
+16       String  s03 = "Hallo!";
+17       String  s04 = "Hallo!";
+18
+19       boolean b05 = s01 == s02;
+20       boolean b06 = s01.equals(s02);
+21       boolean b07 = s03 == s04;
+22       boolean b08 = s03.equals(s04);
+
+Geben Sie die Werte an, mit denen die Variablen b05 bis b08 initialisiert
+werden.
+
+boolean b05 = s01 == s02; // false
+boolean b06 = s01.equals(s02);// true
+boolean b07 = s03 == s04;// true
+boolean b08 = s03.equals(s04);// true
+
+
+--------------------------------------------------------------------------
+27. Betrachten Sie das folgende Java-Programm:
+
+ 1 class K77 {
+ 2    // ------------------------------------------------------------------
+ 3    int n01;
+ 4    int n02;
+ 5    static float f01;
+ 6    static float f02;
+ 7    // ------------------------------------------------------------------
+ 8    static public void main(String[] sonja) {
+ 9       printf("K77: Jetzt geht es los!%n");
+10       K77 ka = new K77();
+11       K77 kb = new K77();
+12       K77 kc = new K77();
+13       ...
+14    } // main
+15    // -----------------------------------------------------------------
+16    // Eine Methode mit einem kurzen Namen:
+17    static void printf(String f, Object... v) {System.out.printf(f, v);}
+18    // -----------------------------------------------------------------
+19 } // class K77
+
+Wie viele int-Variablen und wie viele float-Variablen existieren zu
+verschiedenen Zeitpunkten? Tragen Sie Ihre Antworten in die folgende
+Tabelle entsprechend aus.
+
++--------------------+----------------------+------------------------+
+|    Zeitpunkt       | Anzahl int-Variablen | Anzahl float-Variablen |
++--------------------+----------------------+------------------------+
+| 1. Wenn Zeile 10   |                      |                        |
+|    fertig          |          4           |            4           |
+|    ausgeführt ist  |                      |                        |
++--------------------+----------------------+------------------------+
+| 2. Wenn Zeile 11   |                      |                        |
+|    fertig          |          6           |            6           |
+|    ausgeführt ist  |                      |                        |
++--------------------+----------------------+------------------------+
+| 3. Wenn Zeile 12   |                      |                        |
+|    fertig          |         8            |            8           |
+|    ausgeführt ist  |                      |                        |
++--------------------+----------------------+------------------------+
+
