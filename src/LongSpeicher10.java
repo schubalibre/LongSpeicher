@@ -23,7 +23,7 @@ class LongSpeicher10 implements LongSpeicher {
    // ---------------------------------------------------------------------
    private int index(long n) {
 	   
-	   for(int i = 0; i < speicher.length; i++){
+	   for(int i = 0; i < nfi; i++){
 		   if(speicher[i] == n) 
 			   return i;
 	   }
@@ -45,34 +45,21 @@ class LongSpeicher10 implements LongSpeicher {
    }
    // ---------------------------------------------------------------------
    public boolean loesche(long n) {
-	   
-	   if(istDrin(n)){
-		   
-		   for(int i = index(n); i < nfi; i++){
-			   if(i+1 < speicher.length)
-			   speicher[i] = speicher[i+1];
-		   }
+	   int i = this.index(n);
+	   if(i != -1){
+		   speicher[i] = speicher[nfi-1];
 		   nfi--;
-		   speicher[nfi] = 0;
-		   
 		   return true;
-	   }else{
-
-		      return false;
 	   }
-	   
+	   return false;
+
       // Loescht ein Vorkommen von n in diesem Speicher, und liefert true.
       // Liefert false falls n nicht in diesem Speicher vorkommt.
    }
    // ---------------------------------------------------------------------
    public boolean istDrin(long n) {
       // Liefert true genau dann wenn n in diesem Speicher vorkommt.
-	   for(int i = 0; i < nfi; i++){
-		   if(speicher[i] == n) 
-			   return true;
-	   }
-
-      return false;
+      return this.index(n) !=-1;
    }
    // ---------------------------------------------------------------------
    // Zum Testen:
