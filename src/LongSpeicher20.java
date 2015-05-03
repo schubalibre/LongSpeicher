@@ -57,10 +57,12 @@ class LongSpeicher20 implements LongSpeicher {
 			return false;
 		
 		int newIndex = this.index(n);
-		
-		for(int i = newIndex; i < nfi; i++){
+		System.out.println(newIndex+":"+n+":"+nfi);
+		for(int i = newIndex; i < speicher.length-1; i++){
+			
 			speicher[i+1] = speicher[i];
 		}
+		this.print();
 		speicher[newIndex] = n;
 		nfi++;
 		return true;
@@ -109,8 +111,9 @@ class LongSpeicher20 implements LongSpeicher {
 		lsa.fuegeEin(3);
 		lsa.fuegeEin(9);
 		lsa.fuegeEin(6);
-		lsa.fuegeEin(9);
 		lsa.fuegeEin(10);
+		lsa.fuegeEin(9);
+
 		lsa.fuegeEin(1);
 		lsa.print();
 	
