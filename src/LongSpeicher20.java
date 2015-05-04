@@ -56,23 +56,42 @@ class LongSpeicher20 implements LongSpeicher {
 		if (this.istDrin(n))
 			return false;
 		
+		// wir holen uns den neuen Index
 		int newIndex = this.index(n);
-		System.out.println(newIndex+":"+n+":"+nfi);
-		for(int i = newIndex; i < speicher.length-1; i++){
-			
-			speicher[i+1] = speicher[i];
+		
+		// liegt der Index innerhalb des Arrays müssen wir die enthaltenen Zahlen um eine Stelle nach hinten verändern
+		// um die Werte nicht zu überschreiben, beginnen wir von hinten an zu ändern
+		// falls es nicht innerhalb des Arrays liegt wird die Schleife nicht benutzt 
+		for(int i = nfi; i > newIndex; i--){
+			speicher[i] = speicher[i-1];
 		}
-		this.print();
+		// danach setzten wir in die entstandene Lücke unseren neuen Wert ein
 		speicher[newIndex] = n;
+		// nfi eins höher
 		nfi++;
 		return true;
 	}
 
 	// ---------------------------------------------------------------------
 	public boolean loesche(long n) {
-		int i = this.index(n);
-		if (i != -1) {
-			speicher[i] = speicher[nfi - 1];
+		
+		
+		if (nfi <= 0)
+			return false;
+		
+		int index = this.index(n);
+		
+		if(index > speicher.length)
+			return false;
+		
+		if (speicher[index] == n) {
+System.out.println(index);
+System.out.println(nfi);
+System.out.println(speicher[index]);
+			for(int i = index; i < nfi; i++){
+				speicher[i] = speicher[i+1];
+			}
+			speicher[nfi] = 0;
 			nfi--;
 			return true;
 		}
@@ -113,8 +132,11 @@ class LongSpeicher20 implements LongSpeicher {
 		lsa.fuegeEin(6);
 		lsa.fuegeEin(10);
 		lsa.fuegeEin(9);
-
 		lsa.fuegeEin(1);
+		lsa.print();
+		lsa.loesche(10);
+		lsa.loesche(6);
+		lsa.loesche(60);
 		lsa.print();
 	
 		printf("----------------------------------%n");
