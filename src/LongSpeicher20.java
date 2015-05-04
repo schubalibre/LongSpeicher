@@ -75,27 +75,19 @@ class LongSpeicher20 implements LongSpeicher {
 	// ---------------------------------------------------------------------
 	public boolean loesche(long n) {
 		
-		
-		if (nfi <= 0)
-			return false;
-		
-		int index = this.index(n);
-		
-		if(index > speicher.length)
-			return false;
-		
-		if (speicher[index] == n) {
-System.out.println(index);
-System.out.println(nfi);
-System.out.println(speicher[index]);
-			for(int i = index; i < nfi; i++){
-				speicher[i] = speicher[i+1];
+		if(istDrin(n)){
+			for(int i = index(n); i < nfi; i++){
+				// an der letzten Stelle wird nicht mehr verändert
+				// da nur bis zum nfi gesucht wird muss diese Stelle nicht überschrieben werden
+				if(i+1 < nfi)
+					speicher[i] = speicher[i+1];
 			}
-			speicher[nfi] = 0;
 			nfi--;
 			return true;
 		}
+
 		return false;
+
 
 		// Loescht ein Vorkommen von n in diesem Speicher, und liefert true.
 		// Liefert false falls n nicht in diesem Speicher vorkommt.
@@ -106,10 +98,7 @@ System.out.println(speicher[index]);
 		// Liefert true genau dann wenn n in diesem Speicher vorkommt.
 		int i = index(n);
 		
-		if(i >= nfi)
-			return false;
-		
-		return speicher[i] == n;
+		return i < nfi && speicher[i] == n;
 	}
 
 	// ---------------------------------------------------------------------
