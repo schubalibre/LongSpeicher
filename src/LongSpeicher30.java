@@ -6,8 +6,6 @@ long-Werte sammeln (einfuegen, entfernen, suchen) kann.
 ---------------------------------------------------------------------------
 Implementierung: Als unsortierte Reihung
 ------------------------------------------------------------------------ */
-import java.util.Arrays; // Fuer Testausgaben
-import java.util.List;
 
 class LongSpeicher30 implements LongSpeicher {
 	

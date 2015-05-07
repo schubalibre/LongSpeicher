@@ -15,7 +15,6 @@ bei gewissen Fehlern informativere Fehlermeldungen ausgegeben werden.
 import java.util.Random;
 import junit.framework.TestCase;  // Eine Test-Klasse
 
-import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 
 public class LongSpeicher_Jut extends TestCase {
