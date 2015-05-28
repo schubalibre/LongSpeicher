@@ -74,23 +74,21 @@ class LongSpeicher20 implements LongSpeicher {
 
 	// ---------------------------------------------------------------------
 	public boolean loesche(long n) {
-		
-		if(istDrin(n)){
-			for(int i = index(n); i < nfi; i++){
-				// an der letzten Stelle wird nicht mehr verändert
-				// da nur bis zum nfi gesucht wird muss diese Stelle nicht überschrieben werden
-				if(i+1 < nfi)
-					speicher[i] = speicher[i+1];
-			}
-			nfi--;
-			return true;
-		}
-
-		return false;
-
-
 		// Loescht ein Vorkommen von n in diesem Speicher, und liefert true.
 		// Liefert false falls n nicht in diesem Speicher vorkommt.
+		int ind = index(n);
+		
+		if(ind >= nfi || speicher[ind] != n) return false;
+		
+		for(int i = ind; i < nfi; i++){
+			// an der letzten Stelle wird nicht mehr verändert
+			// da nur bis zum nfi gesucht wird muss diese Stelle nicht überschrieben werden
+			if(i+1 < nfi)
+				speicher[i] = speicher[i+1];
+		}
+		nfi--;
+		return true;
+
 	}
 
 	// ---------------------------------------------------------------------

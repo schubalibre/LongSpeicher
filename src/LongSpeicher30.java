@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 // Datei LongSpeicher10.java
 /* ------------------------------------------------------------------------
 Jedes Objekt der Klasse LongSpeicher30 ist ein Speicher, in dem man
@@ -71,8 +73,28 @@ class LongSpeicher30 implements LongSpeicher {
    // Zum Testen:
    private void print() {
       // Gibt diesen Speicher in lesbarer Form zur Standardausgabe aus:
-//      printf("nfi: %d, speicher: %s%n", nfi, Arrays.toString(speicher));
+      //printf("nfi: %d, speicher: %s%n", nfi, Arrays.toString(speicher));
    }
+   
+   public String toString(){
+	   
+	   if(ADK.next == EDK) return "[]";
+	   
+	   StringBuilder s = new StringBuilder("[" + ADK.next.data);
+	   
+	   Knoten hier = ADK.next.next;
+	   
+	   while(hier != EDK){
+		   s.append(", " + hier.data);
+		   hier = hier.next;
+	   }
+	   
+	   s.append("]");
+
+	   
+	    return s.toString();
+   }
+   
    // ---------------------------------------------------------------------
    static public void main(String[] args) {
       printf("LongSpeicher10: Jetzt geht es los!%n");
@@ -80,12 +102,20 @@ class LongSpeicher30 implements LongSpeicher {
 
       LongSpeicher30 lsa = new LongSpeicher30();
 
-      lsa.print();
-      lsa.fuegeEin(10);
-      lsa.print();
-      lsa.istDrin(10);
-      lsa.istDrin(20);
-
+      System.out.println(lsa.toString());
+      
+      lsa.fuegeEin(12);
+      
+      System.out.println(lsa.toString());
+      
+	  lsa.fuegeEin(14);
+		      
+		      
+      lsa.fuegeEin(16);
+      
+      System.out.println(lsa.toString());
+      
+      
       printf("----------------------------------%n");
       printf("LongSpeicher10: Das war's erstmal!%n");
    } // main

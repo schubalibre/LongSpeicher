@@ -46,12 +46,12 @@ class LongSpeicher10 implements LongSpeicher {
    // ---------------------------------------------------------------------
    public boolean loesche(long n) {
 	   int i = this.index(n);
-	   if(i != -1){
-		   speicher[i] = speicher[nfi-1];
-		   nfi--;
-		   return true;
-	   }
-	   return false;
+	   
+	   if(i == -1) return false;
+	   
+	   speicher[i] = speicher[nfi-1];
+	   nfi--;
+	   return true;
 
       // Loescht ein Vorkommen von n in diesem Speicher, und liefert true.
       // Liefert false falls n nicht in diesem Speicher vorkommt.
