@@ -20,7 +20,7 @@ import java.lang.reflect.Constructor;
 public class LongSpeicher_Jut extends TestCase {
    // ---------------------------------------------------------------------
    // Der volle Name der zu testenden Klasse ("mit allen Paketen"):
-   final static String KLASSEN_NAME = "LongSpeicher50";
+   final static String KLASSEN_NAME = "LongSpeicher60";
    // ---------------------------------------------------------------------
    public LongSpeicher_Jut() {
       // Prueft folgende Bedingungen:

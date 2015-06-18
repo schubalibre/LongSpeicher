@@ -37,9 +37,8 @@ class LongSpeicher40 implements LongSpeicher {
 	   // den Vorgaenger des EDK (falls n in dieser Liste nicht vorkommt).
 	   EDK.data = n;
 	   Knoten hier = ADK;
-	   while(hier.next.data < n){
-		   hier = hier.next;
-	   }
+	   while(hier.next.data < n) hier = hier.next;
+	   
 	   return hier;
    }
 
@@ -49,8 +48,8 @@ class LongSpeicher40 implements LongSpeicher {
 	  // Fuegt n in diesen Speicher ein und liefert true.
 	  // Liefert false, wenn n nicht eingefuegt werden konnte.
 	  Knoten vor = vorgaenger(n);
-	   
 	  vor.next = new Knoten(vor.next, n); 
+	  
 	  return true;
    }
    // ---------------------------------------------------------------------
@@ -59,6 +58,7 @@ class LongSpeicher40 implements LongSpeicher {
 	   if(vor.next.data != n || vor.next == EDK) return false;
 	   
 	   vor.next = vor.next.next;
+	   
 	   return true;
 		
       // Loescht ein Vorkommen von n in diesem Speicher, und liefert true.

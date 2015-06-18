@@ -39,9 +39,7 @@ class LongSpeicher30 implements LongSpeicher {
 	   // den Vorgaenger des EDK (falls n in dieser Liste nicht vorkommt).
 	   EDK.data = n;
 	   Knoten hier = ADK;
-	   while(hier.next.data != n){
-		   hier = hier.next;
-	   }
+	   while(hier.next.data != n) hier = hier.next;
 	   return hier;
    }
 
@@ -78,7 +76,7 @@ class LongSpeicher30 implements LongSpeicher {
    
    public String toString(){
 	   
-	   if(ADK.next == EDK) return "[]";
+	   if(ADK.next == EDK) return "";
 	   
 	   StringBuilder s = new StringBuilder("[" + ADK.next.data);
 	   
