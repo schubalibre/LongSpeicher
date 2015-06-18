@@ -28,7 +28,7 @@ class LongSpeicher60 implements LongSpeicher {
    // ---------------------------------------------------------------------
    private LongSpeicher30 zustaendigeListe(long n) {
       // Liefert die Liste TAB[i], die für den Schluessel n zustaendig ist:
-      return TAB[(int)Math.abs(new Long(n).hashCode() % TAB.length)];
+      return TAB[(int)Math.abs(n % TAB.length)];
    }
    // ---------------------------------------------------------------------
    public boolean fuegeEin(long n) {
