@@ -73,9 +73,9 @@ class LongSpeicher50 implements LongSpeicher {
 			return false;
 
 		if (hier.k.lubr.k == EDK)
-			hier.k = hier.k.lubr.k;
-		else if (hier.k.rubr.k == EDK)
 			hier.k = hier.k.rubr.k;
+		else if (hier.k.rubr.k == EDK)
+			hier.k = hier.k.lubr.k;
 		else {
 			RefK gesucht = hier.k.lubr;
 			while (gesucht.k.rubr.k != EDK)
